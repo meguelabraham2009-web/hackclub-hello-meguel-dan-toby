@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dwdxmma6jydnc"]
+
+[ext_resource type="Texture2D" uid="uid://c24btun36vvyn" path="res://title screen.png" id="1_rcrpa"]
+[ext_resource type="Script" uid="uid://8st8jnjjdcj1" path="res://control.gd" id="2_euvf0"]
+[ext_resource type="AudioStream" uid="uid://cylo4x0i4408t" path="res://Title Screen.wav" id="3_euvf0"]
+
+[node name="Node2D" type="Node2D" unique_id=432381874]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=576328443]
+position = Vector2(922, 542)
+scale = Vector2(0.9291667, 0.94074076)
+texture = ExtResource("1_rcrpa")
+
+[node name="Control" type="Control" parent="Sprite2D" unique_id=1036885463]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_euvf0")
+
+[node name="PLAY" type="Button" parent="Sprite2D/Control" unique_id=215797647]
+layout_mode = 0
+offset_left = -787.8027
+offset_top = 65.90551
+offset_right = -417.80267
+offset_bottom = 278.90552
+theme_override_font_sizes/font_size = 150
+text = "PLAY"
+
+[node name="MENUTHEME" type="AudioStreamPlayer" parent="." unique_id=375786865]
+stream = ExtResource("3_euvf0")
+autoplay = true
+
+[connection signal="pressed" from="Sprite2D/Control/PLAY" to="Sprite2D/Control" method="_on_play_pressed"]

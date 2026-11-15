@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bcrb6y7cgl2m7"]
+
+[ext_resource type="Texture2D" uid="uid://um17dbtbjcw5" path="res://Boomerang.png" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://cnnxeyu8ti3sn" path="res://bullet.gd" id="1_v8qja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ityvs"]
+size = Vector2(35.166664, 20)
+
+[node name="Bullet" type="RigidBody2D" unique_id=74587683 groups=["bullet"]]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_v8qja")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=26737468]
+scale = Vector2(5, 5)
+texture = ExtResource("1_v7oki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=709353565]
+position = Vector2(-2, -10)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_ityvs")
+
+[node name="Timer" type="Timer" parent="." unique_id=1169076599]
+wait_time = 0.5
+one_shot = true
+autostart = true

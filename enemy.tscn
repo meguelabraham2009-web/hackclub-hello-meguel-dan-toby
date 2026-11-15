@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cnsogn068vxpa"]
+
+[ext_resource type="Script" uid="uid://dmng3jcvbc7se" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://imyxdf7y12je" path="res://3 legged bird (it looks buns iwl).png" id="2_4gyqm"]
+[ext_resource type="AudioStream" uid="uid://6bibcj3x7m4n" path="res://enemyhitsound.wav" id="3_qi2p4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkncd"]
+radius = 73.0
+
+[node name="enemy" type="CharacterBody2D" unique_id=789114926 groups=["enemy"]]
+script = ExtResource("1_4gyqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=695293981]
+position = Vector2(-9.999999, 1.4210855e-14)
+scale = Vector2(7.0999994, 6.8200006)
+texture = ExtResource("2_4gyqm")
+flip_h = true
+
+[node name="enemyBox" type="Area2D" parent="." unique_id=512249849 groups=["bullet"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyBox" unique_id=825479019]
+shape = SubResource("CircleShape2D_vkncd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2024619707]
+shape = SubResource("CircleShape2D_vkncd")
+
+[node name="hitSound" type="AudioStreamPlayer" parent="." unique_id=1660326531]
+stream = ExtResource("3_qi2p4")
+volume_db = -11.625

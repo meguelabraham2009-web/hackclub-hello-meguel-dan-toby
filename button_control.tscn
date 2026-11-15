@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cgsf3rcwixhuj"]
+
+[ext_resource type="Script" uid="uid://cmypp7rph76qf" path="res://button_control.gd" id="1_hj8ny"]
+
+[node name="ButtonControl" type="Control" unique_id=1982017589]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hj8ny")
+
+[node name="Restart" type="Button" parent="." unique_id=1485042785]
+layout_mode = 0
+offset_left = 816.00006
+offset_top = 814.0
+offset_right = 881.00006
+offset_bottom = 845.0
+scale = Vector2(4.887076, 5.2544956)
+text = "Restart"

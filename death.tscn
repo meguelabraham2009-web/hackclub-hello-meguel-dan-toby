@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b7g3qguo64fts"]
+
+[ext_resource type="Texture2D" uid="uid://mui80o5jfxs0" path="res://one leg bird.png" id="1_qemge"]
+[ext_resource type="PackedScene" uid="uid://cgsf3rcwixhuj" path="res://button_control.tscn" id="2_lf77f"]
+[ext_resource type="AudioStream" uid="uid://oeqrtd1238tn" path="res://angrybirdsdeath.wav" id="3_531me"]
+
+[node name="OneLegBird" type="Sprite2D" unique_id=222065894]
+position = Vector2(942, 539)
+scale = Vector2(2.487805, 1.5564706)
+texture = ExtResource("1_qemge")
+
+[node name="ButtonControl" parent="." unique_id=1982017589 instance=ExtResource("2_lf77f")]
+z_index = -1
+offset_left = 3.617647
+offset_top = 290.4006
+offset_right = 43.617645
+offset_bottom = 330.4006
+
+[node name="Restart2" type="Button" parent="ButtonControl" unique_id=93882664]
+z_index = 1
+layout_mode = 0
+offset_left = -69.94118
+offset_top = -61.035522
+offset_right = -8.941177
+offset_bottom = -30.035522
+scale = Vector2(2.9415536, 3.4879584)
+text = "restart"
+
+[node name="endmusic" type="AudioStreamPlayer" parent="." unique_id=2091703511]
+stream = ExtResource("3_531me")
+autoplay = true
+
+[connection signal="pressed" from="ButtonControl/Restart2" to="ButtonControl" method="_on_restart_2_pressed"]
